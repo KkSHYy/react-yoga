@@ -1,0 +1,23 @@
+.Info 
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  background-color: #fff;
+}
+
+.profile-card
+{
+  background-color: #000;
+  color: #fff;
+  border-radius: 50%;
+  padding: 120px;
+  text-align: left;
+  box-shadow: 0 0 20px rgba(29, 132, 59, 0.5);
+}
+
+.profile-card p 
+{
+  margin: 5px 0;
+}

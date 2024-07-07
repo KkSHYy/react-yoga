@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.s-link 
+{
+  @apply hover:bg-white hover:text-black p-3;
+}
