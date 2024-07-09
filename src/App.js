@@ -1,22 +1,40 @@
 import React from 'react'
-import Header from './components/Header';
-import DisplaySec from './home/DisplaySec';
-import Tech from './home/Tech';
-import Info from './home/Info';
-import Footer from './components/Footer';
-
+import { createBrowserRouter, Router, RouterProvider } from 'react-router-dom'
+import Home from './pages/Home';
+import About from './pages/About';
+import Contact from './pages/Contact';
+import Page1 from './nested-compo/page1';
+import Page2 from './nested-compo/Page2';
 
 const App = () => {
 
-  return (
-    <div>
-   <Header/>
-   <DisplaySec/>
-   <Tech/>
-   <Info/>
-   <Footer/>
-    </div>
-  )
+const router= createBrowserRouter(
+ [
+  {
+    path:'/',
+    element:<Home/>,
+    children: [
+     {
+      index:true,
+      element:<Page1/>
+     },
+     {
+      path:'page2',
+      element:<Page2/>,
+     },
+    ]
+  },
+  {
+    path:'about-page',
+    element:<About/>
+  },
+  {
+    path:'contact-page',
+    element:<Contact/>
+  }
+ ]);
+
+  return <RouterProvider router={router}/>
 }
 
-export default App;
+export default App
