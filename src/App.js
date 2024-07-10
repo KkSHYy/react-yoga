@@ -5,6 +5,7 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import Page1 from './nested-compo/page1';
 import Page2 from './nested-compo/Page2';
+import RootLayout from './components/RootLayout';
 
 const App = () => {
 
@@ -12,22 +13,19 @@ const router= createBrowserRouter(
  [
   {
     path:'/',
-    element:<Home/>,
+    element:<RootLayout/>,
     children: [
      {
       index:true,
-      element:<Page1/>
+      element:<Home/>
      },
      {
-      path:'page2',
-      element:<Page2/>,
-     },
+      path:'about-page',
+      element:<About/>
+    },
     ]
   },
-  {
-    path:'about-page',
-    element:<About/>
-  },
+ 
   {
     path:'contact-page',
     element:<Contact/>
